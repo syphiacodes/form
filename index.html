@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="/assets/bom.png">
   <title>official census form</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
@@ -11,6 +11,32 @@
     .centered {
       display: flex;
       justify-content: center;
+    }
+
+    .iframe-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 150%;
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      background: #fff;
+      margin: auto;
+    }
+
+    .iframe-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      .iframe-container {
+        padding-bottom: 200%;
+      }
     }
   </style>
 </head>
@@ -71,9 +97,11 @@
         allowfullscreen></iframe>
     </div>
   </div>
-  <iframe
-    src="https://docs.google.com/forms/d/e/1FAIpQLSfkLxPkiiO9w3U3mwEY71uXZbbTgqFFj1VHoUMMFAN6GvH8bA/viewform?embedded=true"
-    width="100%" height="31989" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  <div class="iframe-container">
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSfkLxPkiiO9w3U3mwEY71uXZbbTgqFFj1VHoUMMFAN6GvH8bA/viewform?embedded=true"
+      frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  </div>
   <a class="rainbow">unreasonably long iframe</a>
 
 </body>
